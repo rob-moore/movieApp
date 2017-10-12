@@ -17,8 +17,11 @@ app.get('/', (req, res) => {
 app.get('/gather', (req, res) => {
   const url = `https://api.themoviedb.org/3/discover/movie?with_genres=878&sort_by=popularity.desc&certification=R&primary_release_year=2015&api_key=${config.tmdbKey}`
   request(url, function (err, res, body) {
-    JSON.stringify(body);
     console.log(body);
+    if(err) {
+      console.log(err)
+      return false;
+    }
   })
 })
 
