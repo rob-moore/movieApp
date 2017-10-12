@@ -1,0 +1,11 @@
+{
+  "name": "icapture",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rob Moore",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}
