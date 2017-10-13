@@ -23,10 +23,10 @@
             <th>Release Date</th>
             <th>Vote Count</th>
           </tr>
-          <tr ng-repeat="movie in movies">
+          <tr ng-repeat="movie in movies | orderBy: 'vote_count' : true">
             <td><a href="#">{{ movie.title }}</a></td>
-            <td>{{ movie.date }}</td>
-            <td>{{ movie.rating }}</td>
+            <td>{{ movie.release_date}}</td>
+            <td>{{ movie.vote_count }}</td>
           </tr>
         </table>
       </div>
