@@ -4,11 +4,29 @@
 <div ng-if="movies.length > 0" class="table-responsive">
   <table class="table table-striped">
     <tr>
-      <th>Title</th>
-      <th>Release Date</th>
-      <th>Vote Count</th>
+      <th>
+        <a href="#" ng-click="sortType = 'title'; sortReverse = !sortReverse">
+          Title
+          <span ng-show="sortType == 'title' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+          <span ng-show="sortType == 'title' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </th>
+      <th>
+        <a href="#" ng-click="sortType = 'release_date'; sortReverse = !sortReverse">
+          Release Date
+          <span ng-show="sortType == 'release_date' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+          <span ng-show="sortType == 'release_date' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </th>
+      <th>     
+        <a href="#" ng-click="sortType = 'vote_count'; sortReverse = !sortReverse">
+          Vote Count
+          <span ng-show="sortType == 'vote_count' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+          <span ng-show="sortType == 'vote_count' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </th>
     </tr>
-    <tr ng-repeat="movie in movies | orderBy: 'vote_count' : true">
+    <tr ng-repeat="movie in movies | orderBy:sortType:sortReverse">
       <td>
         <a ui-sref="about" ui-sref-active="active" ng-click="selectMovie(movie)">{{ movie.title }}</a>
       </td>
