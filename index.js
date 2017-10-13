@@ -54,7 +54,13 @@ const insertMovies = url => {
 // Define gather endpoint
 app.get('/gather', (req, resp) => {
   // Ensure data is fresh
-  connection.query('TRUNCATE movies')
+
+  connection.query('SELECT * FROM movies', (error, results, fields) => {
+    if (results.length > 0) {
+      connection.query('TRUNCATE movies')
+      
+    }
+  })
 
   // Gets 100 results 
   for (let i = 1; i <= 5; i++) {
