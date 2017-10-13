@@ -77,8 +77,6 @@ app.get('/movies', (req, resp) => {
 
 })
 
-
-
 app.listen(8081, () => {
   console.log('express is working')
 })
