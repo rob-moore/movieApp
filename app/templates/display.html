@@ -1,0 +1,19 @@
+<div ng-if="movies.length == 0">
+  <h3 class="text-center">We couldn't find any movies! Sorry!</h3>
+</div>
+<div ng-if="movies.length > 0" class="table-responsive">
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Release Date</th>
+      <th>Vote Count</th>
+    </tr>
+    <tr ng-repeat="movie in movies | orderBy: 'vote_count' : true">
+      <td>
+        <a ui-sref="about" ui-sref-active="active" ng-click="selectMovie(movie)">{{ movie.title }}</a>
+      </td>
+      <td>{{ movie.release_date}}</td>
+      <td>{{ movie.vote_count }}</td>
+    </tr>
+  </table>
+</div>
