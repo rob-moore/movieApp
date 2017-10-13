@@ -1,2 +1,25 @@
-<a ui-sref="display" class="btn btn-success">Back</a>
 <h1>{{selectedMovie.title}}</h1>
+<div class="singleMovie">
+  <img src="https://image.tmdb.org/t/p/w185/{{selectedMovie.poster_path}}" alt="" class="img img-responsive">
+  <div class="overview">
+    <p>
+      {{ selectedMovie.overview }}
+    </p>
+  </div>
+</div>
+<table class="table table-striped table-responsive">
+    <tr>
+        <th>Popularity</th>
+        <th>Release Date</th>
+        <th>Vote Count</th>
+        <th>Vote Average</th>
+    </tr>
+    <tr>
+      <td>{{ selectedMovie.popularity }}</td>
+      <td>{{ selectedMovie.release_date }}</td>
+      <td>{{ selectedMovie.vote_count }}</td>
+      <td>{{ selectedMovie.vote_average }}</td>
+    </tr>
+  </table>
+  <a ui-sref="display" class="btn btn-info back">Back</a>
+  

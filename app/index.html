@@ -8,21 +8,25 @@
   <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
   <script src="app.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body ng-controller="MovieAppController">
   <div class="container">
     <div class="col-xs-12">
-      <div class="row">Brought to you by:
-        <img src="assets/img/tmdb-primary-green.png" alt="" class="img img-responsive">
-      </div>
 
       <ui-view></ui-view>
+
+      <div class="flexy">
+          <p>Made with &hearts; by Rob Moore using:</p>
+          <a href="https://www.themoviedb.org/" target="_blank">
+            <img src="assets/img/tmdb-primary-green.png" alt="Movie database logo" class="img img-responsive logo">
+          </a>
+      </div>
 
     </div>
   </div>
 
 </body>
-
 
 </html>

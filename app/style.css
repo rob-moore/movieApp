@@ -1,0 +1,27 @@
+.flexy{
+  display:flex;
+  justify-content: center; 
+  
+}
+
+.singleMovie {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexy p {
+  margin-right: 10px;
+  transform: translateY(33%);
+}
+
+.logo {
+  height: 50px;
+}
+
+.overview {
+  margin-left: 10px;
+}
+
+.back {
+  margin-bottom: 20px;
+}
